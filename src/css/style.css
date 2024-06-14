@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* :root {
+  --app-background-dark: rgb(24, 23, 32);
+  --input-width: 360px;
+} */
+
+html {
+  scrollbar-gutter: stable;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border-style: none;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* body {
+  font-family: "Montserrat", "sans-serif", Arial, sans-serif;
+  background-color: var(--app-background-dark);
+} */
+
+body {
+  background-color: #141414;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+
+/* Container Styles */
+.search-container,
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+main {
+  padding: 60px 0;
+}
+
+section {
+  margin-top: 60px;
+}
+
+h1,
+h2,
+h3,
+li,
+p,
+a,
+label,
+button,
+input {
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
+}
+
+p {
+  margin-top: 6px;
+  font-size: 1.8rem;
+}
+
+h2 {
+  a {
+    font-size: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+
+    &:hover {
+      color: #08ffc1;
+    }
+  }
+}
+
+section {
+  margin-top: 60px;
+}
+
+/* Input Styles */
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0051cc;
+}
+
+ul {
+  margin-top: 20px;
+  width: var(--input-width);
+}
+
+/* User Avatar Styles */
+.user-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* User Info Styles */
+.user-container h2,
+.user-container p {
+  margin: 10px 0;
+}
+
+.user-container a {
+  color: #0066ff;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.user-container a:hover {
+  text-decoration: underline;
+}
