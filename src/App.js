@@ -7,34 +7,32 @@ import User from './pages/User';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <Search />
-            </motion.div>
-          }
-        />
-        <Route
-          path="/user/:username"
-          element={
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <User />
-            </motion.div>
-          }
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Search />
+          </motion.div>
+        }
+      />
+      <Route
+        path="/user/:username"
+        element={
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <User />
+          </motion.div>
+        }
+      />
+    </Routes>
   );
 };
 

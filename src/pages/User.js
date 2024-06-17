@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -6,7 +6,7 @@ import axios from 'axios';
 const User = () => {
   const { username } = useParams();
   const [userData, setUserData] = useState(null);
-  const navigate = useNavigate(); // Updated hook
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -15,7 +15,7 @@ const User = () => {
         setUserData(response.data);
       } catch (error) {
         alert('User not found');
-        navigate('/'); // Updated navigation
+        navigate('/');
       }
     };
 
@@ -26,13 +26,22 @@ const User = () => {
     <div className="user-container">
       {userData && (
         <>
-          <img src={userData.avatar_url} alt={userData.name} />
-          <h2>{userData.name}</h2>
-          <p>{userData.bio}</p>
-          <p>Public Repositories: {userData.public_repos}</p>
-          <p>Followers: {userData.followers}</p>
-          <p>Following: {userData.following}</p>
-          <a href={userData.html_url} target="_blank" rel="noopener noreferrer">Profile</a>
+          <div className="user-profile">
+            <img className="user-avatar" src={userData.avatar_url} alt={userData.name} />
+            <h2 className="user-name">{userData.name}</h2>
+            <p className="user-bio">{userData.bio}</p>
+            <div className="user-stats">
+              <p><strong>Repositories:</strong> {userData.public_repos}</p>
+              <p><strong>Followers:</strong> {userData.followers}</p>
+              <p><strong>Following:</strong> {userData.following}</p>
+            </div>
+            <a className="github-link" href={userData.html_url} target="_blank" rel="noopener noreferrer">
+              Go to GitHub
+            </a>
+          </div>
+          <div className="user-repos">
+            {/* Example: Fetch and display repos here */}
+          </div>
         </>
       )}
     </div>
